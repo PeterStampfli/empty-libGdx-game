@@ -1,6 +1,7 @@
 package com.mygdx.game.utilities;
 
 import com.badlogic.gdx.assets.AssetManager;
+import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
@@ -18,14 +19,14 @@ public class Device implements Disposable{
     public BitmapFont bitmapFont;
     public ShapeRenderer shapeRenderer;
     public AssetManager assetManager;
+    public OrthographicCamera camera;
     public Viewport viewport;
-
-
 
     public Device(){
         disposer=new Disposer("Device");
         assetManager=new AssetManager();
         disposer.add(assetManager,"assetManager");
+        camera=new OrthographicCamera();
     }
 
     public void setLogging(boolean logging){
